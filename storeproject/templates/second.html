@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get form/e-SchooL-store </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+  
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+        /* CSS for styling the button */
+        body{
+          background: url("https://wallpaperaccess.com/full/1567666.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .my-button {
+            background-color: #4CAF50; /* Green background color */
+            color: white; /* White text color */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for the button */
+            text-align: center;
+            text-decoration: none; /* No underlines for the text */
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px; /* Margin around the button */
+            cursor: pointer; /* Cursor style on hover */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        /* CSS for styling the button on hover */
+        .my-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    
+
+    .sub-menu-1{
+      display: none;
+    }
+    .menu-bar ul li:hover .sub-menu-1{
+        display:block  ;
+        position:absolute;
+        background-color: white;
+        margin-top:15px;
+        margin-left:-15px;
+      }
+      .menu-bar ul li:hover .sub-menu-1{
+        display:block  ;
+        margin:10px;
+        
+      }
+
+      .intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 520px;
+       
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+    </style>
+</head>
+<body>
+
+    
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">E-SchooL-Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="menu-bar" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+        <a class="nav-item">{{user.username}}</a>
+        </li>
+        
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="sample/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sample/register">Registration</a>
+        </li>
+        {% endif %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Departments
+          </a>
+          <div class="sub-menu-1" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Computer_science">Computer Science</a>
+            <a class="dropdown-item" href="https://en.wikipedia.org/wiki/English">English</a>
+            <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Biology">Biology</a>
+            <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Physics">Physics</a>
+            <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Mathematics">Maths</a>
+          </div>
+        </li>
+        
+      </ul>
+      
+    </div>
+  </nav>
+  
+    <div class="intro">
+      
+      <a class="btn btn-danger" href="form">apply now</a>
+      
+    </div>
+  </div>
+</body>
+</html>

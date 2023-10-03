@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+  
+
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+        /* CSS for styling the form container */
+
+        body{
+            background-color: #f2f2f2;
+        }
+
+
+        .form-container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #e80c0c;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            
+        }
+
+        /* CSS for styling form labels and input fields */
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        /* CSS for the submit button */
+        .submit-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* CSS for styling form labels and select fields */
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        /* CSS for styling the form container */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* CSS for styling form labels and select field */
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        /* CSS for styling checkboxes */
+        .checkbox-group {
+            margin-bottom: 20px;
+        }
+
+        .checkbox-label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .checkbox-input {
+            margin-right: 5px;
+        }
+
+        /* CSS for the submit button */
+        .submit-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+        .message{
+            width:100%;
+            position: relative;
+            margin-bottom: 60px;
+            display:flex;
+            justify-content: center;
+        }
+        .message .success{
+            font-size:20px;
+            color: green;
+            position: absolute;
+            animation: buttons .3s linear;
+            display: none;
+        }
+        .message .danger{
+            font-size:20px;
+            color: red;
+            position: absolute;
+            animation: buttons .3s linear;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form-container" >
+       <center> <h2>Personal Information Form</h2> </center>
+       
+        
+        <form method="post">
+            {% csrf_token %}
+        
+
+           
+
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" name="name" class="form-input" required>
+
+            <label for="dob" class="form-label">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" class="form-input" required>
+
+            <label for="age" class="form-label">Age:</label>
+            <input type="number" id="age" name="age" class="form-input" required>
+
+            <label class="form-label">Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+
+            <label for="phone" class="form-label">Phone Number:</label>
+            <input type="number" id="phone" name="phone" class="form-input" required>
+
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+
+            <label for="address" class="form-label">Address:</label>
+            <textarea id="address" name="address" class="form-input" rows="4" required></textarea>
+
+            <label for="department" class="form-label">Department:</label>
+            <select id="department" name="department" class="form-select">
+                <option value="">Select Department</option>
+                <option value="ComputerScience">ComputerScience</option>
+                <option value="Biology">Biology</option>
+                <option value="Physics">Physics</option>
+                <option value="English">English</option>
+                <option value="Maths">Maths</option>
+            </select>
+
+            <label for="course" class="form-label">Course:</label>
+            <select id="course" name="course" class="form-select" disabled>
+                <option value="">Select Course</option>
+            </select>
+
+            <label for="purpose" class="form-label">Purpose:</label>
+            <select id="purpose" name="purpose" class="form-select">
+                <option value="enquiry">Select purpose</option>
+                <option value="enquiry">Quality check</option>
+                <option value="enquiry">For Enquiry</option>
+                <option value="order">Place Order</option>
+                <option value="return">Return</option>
+            </select>
+
+            <div class="checkbox-group">
+                <label class="form-label">Materials Provided:</label>
+                <label for="debitNoteBook" class="checkbox-label">
+                    <input type="checkbox" id="debitNoteBook" name="materials" value="Debit Note Book" class="checkbox-input">
+                    Debit Note Book
+                </label>
+                <label for="pen" class="checkbox-label">
+                    <input type="checkbox" id="pen" name="materials" value="Pen" class="checkbox-input">
+                    Pen
+                </label>
+                <label for="examPapers" class="checkbox-label">
+                    <input type="checkbox" id="examPapers" name="materials" value="Exam Papers" class="checkbox-input">
+                    Exam Papers
+                </label>
+                <label for="examPapers" class="checkbox-label">
+                    <input type="checkbox" id="examPapers" name="materials" value="Exam Papers" class="checkbox-input">
+                    Record book
+                </label>
+                
+                <!-- Add more checkboxes as needed -->
+            </div>
+            <div>
+                
+
+            <center>
+            <p> <button type="submit" class="submit-button" >Submit</button></p><br>
+
+            {% for msg in messages %}
+            <p style="color:green" >{{msg}}</p>
+            {% endfor %}
+
+                      
+            </center>
+            <center>
+           
+
+            <a class="nav-link" href="/">Back to home page ?</a><br>
+            
+            
+            </center>
+
+            
+        </form>
+        
+
+        <br>
+         
+        
+
+        <script >
+            // JavaScript to populate the dependent dropdown based on the selected department
+            const departmentSelect = document.getElementById("department");
+            const courseSelect = document.getElementById("course");
+    
+            const courseOptions = {
+                Biology: ["Select Course", "Anatomy", "Botony","Zoology","Microbiology","Biotechnology","Genetics"],
+                ComputerScience: ["Select Course", "BCA", "MCA","B.VOC IT","Software engineering","Data analytics"],
+                English: ["Select Course", "BA", "MA","Journalism",],
+                Physics: ["Select Course", "Bsc", "Msc","Thermodynamics","Electromagnetism"],
+                Maths: ["Select Course", "Bsc", "Msc","Calculus","Discrete mathematics","Probability","Statistics"]
+            };
+    
+            departmentSelect.addEventListener("change", function () {
+                const selectedDepartment = departmentSelect.value;
+                const courses = courseOptions[selectedDepartment];
+    
+                // Clear previous options
+                courseSelect.innerHTML = "";
+    
+                // Populate course options
+                courses.forEach(course => {
+                    const option = document.createElement("option");
+                    option.text = course;
+                    option.value = course;
+                    courseSelect.appendChild(option);
+                });
+    
+                // Enable the course dropdown
+                courseSelect.disabled = false;
+            });
+
+             // JavaScript to display a message when the form is submitted
+        const form = document.getElementById("requestForm");
+        const messageContainer = document.getElementById("confirmationMessage");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from actually submitting
+
+            // Get the selected purpose and materials
+            const purpose = document.getElementById("purpose").value;
+            const materials = Array.from(document.querySelectorAll('input[name="materials"]:checked')).map(input => input.value);
+
+            // Create the message
+            const message = `Order Confirmed\nPurpose: ${purpose}\nMaterials Provided: ${materials.join(", ")}`;
+
+            // Display the message
+            messageContainer.textContent = message;
+            messageContainer.style.display = "block";
+        });
+        
+
+        </script>
+
+
+    </div>
+</body>
+</html>
